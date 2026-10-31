@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora y Conversor ET403</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="contenedor-principal">
+    
+    <!-- Sección 1: Calculadora Diseño Oscuro Neón -->
+    <section class="dispositivo-calculadora oscuro">
+        <div class="pantalla-calculadora">
+            <div id="historial" class="historial"></div>
+            <div id="resultado" class="lcd-principal">0</div>
+        </div>
+        
+        <div class="teclado-grid">
+            <button class="btn-accion texto-azul" onclick="limpiarTodo()">AC</button>
+            <button class="btn-accion texto-azul" onclick="borrarUltimo()">⌫</button>
+            <button class="btn-accion texto-azul" onclick="porcentaje()">%</button>
+            <button class="btn-operador texto-azul" onclick="agregarOperador('dividir')">÷</button>
+
+            <button class="btn-numero" onclick="agregarNumero('7')">7</button>
+            <button class="btn-numero" onclick="agregarNumero('8')">8</button>
+            <button class="btn-numero" onclick="agregarNumero('9')">9</button>
+            <button class="btn-operador texto-azul" onclick="agregarOperador('multiplicar')">×</button>
+
+            <button class="btn-numero" onclick="agregarNumero('4')">4</button>
+            <button class="btn-numero" onclick="agregarNumero('5')">5</button>
+            <button class="btn-numero" onclick="agregarNumero('6')">6</button>
+            <button class="btn-operador texto-azul" onclick="agregarOperador('restar')">-</button>
+
+            <button class="btn-numero" onclick="agregarNumero('1')">1</button>
+            <button class="btn-numero" onclick="agregarNumero('2')">2</button>
+            <button class="btn-numero" onclick="agregarNumero('3')">3</button>
+            <button class="btn-operador texto-azul" onclick="agregarOperador('sumar')">+</button>
+
+            <button class="btn-numero cero" onclick="agregarNumero('0')">0</button>
+            <button class="btn-numero" onclick="agregarNumero('.')">.</button>
+            <button class="btn-igual fondo-azul" onclick="calcular()">=</button>
+        </div>
+    </section>
+
+    <!-- Sección 2: Conversor de Unidades -->
+    <section id="conversor-unidades" class="tarjeta-conversor">
+        <h2 class="titulo-conversor">Conversor de Medidas</h2>
+        <input type="number" id="valorInput" placeholder="Ingrese el valor a convertir">
+        <select id="tipoConversion">
+            <option value="m-cm">Metros a Centímetros</option>
+            <option value="cm-m">Centímetros a Metros</option>
+            <option value="kg-g">Kilogramos a Gramos</option>
+            <option value="g-kg">Gramos a Kilogramos</option>
+        </select>
+        <button class="btn-convertir" onclick="calcularConversion()">Convertir</button>
+        <div id="resultadoConversion" class="pantalla-resultados">Resultado: </div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

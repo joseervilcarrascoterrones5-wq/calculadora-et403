@@ -1,0 +1,83 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 30px; 
+    background-color: #1a1a2e; /* Fondo general oscuro para resaltar el neón */
+    display: flex; 
+    justify-content: center;
+}
+.contenedor-principal { 
+    display: flex; 
+    gap: 50px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+/* --- DISEÑO CALCULADORA TIPO SMARTPHONE --- */
+.dispositivo-calculadora.oscuro { 
+    background: #0f111a; 
+    padding: 25px 20px; 
+    width: 320px; 
+    border-radius: 20px; 
+    /* Efecto de resplandor azul neón de la imagen */
+    box-shadow: 0 0 40px rgba(27, 91, 255, 0.4), inset 0 0 10px rgba(0,0,0,0.8); 
+}
+
+/* Pantalla superior */
+.pantalla-calculadora { 
+    text-align: right; 
+    padding: 10px; 
+    color: white; 
+    min-height: 90px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.historial { font-size: 1.2rem; color: #888; min-height: 24px; }
+.lcd-principal { font-size: 3.5rem; font-weight: normal; margin-top: 5px; }
+
+/* Teclado Grid */
+.teclado-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+}
+.teclado-grid button { 
+    background-color: #1e2129; 
+    border: none; 
+    border-radius: 15px; 
+    height: 65px; 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+    color: white; 
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.1s, filter 0.2s;
+}
+.teclado-grid button:active { transform: scale(0.92); filter: brightness(1.2); }
+
+/* Colores específicos de la imagen */
+.texto-azul { color: #1b5bff !important; font-weight: bold; }
+.fondo-azul { background-color: #1b5bff !important; color: white !important; font-weight: bold; }
+.cero { grid-column: span 2; text-align: left; padding-left: 30px; }
+
+/* Mensajes de error en pantalla */
+.error-text { font-size: 1.5rem !important; color: #ff4757 !important; }
+
+/* --- DISEÑO TARJETA CONVERSOR --- */
+.tarjeta-conversor { 
+    background: white; padding: 30px; width: 300px; border-radius: 15px; 
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2); 
+}
+.tarjeta-conversor input, .tarjeta-conversor select {
+    width: 100%; margin-bottom: 15px; padding: 12px; box-sizing: border-box;
+    border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;
+}
+.btn-convertir { 
+    width: 100%; padding: 12px; background-color: #1b5bff; color: white; 
+    border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: bold;
+}
+.titulo-conversor { color: rgb(30, 64, 175); font-size: 1.8rem; margin-top: 0; }
+.pantalla-resultados { font-weight: bold; margin-top: 15px; padding: 15px; border-radius: 8px; }
+.tarjeta-conversor .exito { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.tarjeta-conversor .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
